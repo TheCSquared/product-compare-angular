@@ -1,0 +1,35 @@
+<div class="row compare">
+  <div class="col-12 mt-5 text-center">
+    <table class="table">
+      <thead class="thead-default">
+        <tr>
+          <th></th>
+          <th *ngFor='let product of products'>
+            {{product.name}}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="price">
+          <th scope="row" class="text-left">Price</th>
+          <td *ngFor='let product of products' class="text-center">
+             {{product.price}}
+          </td>
+        </tr>
+        <tr class="colors">
+          <th scope="row" class="text-left">Colors</th>
+          <td *ngFor='let product of products'>
+             <span *ngFor='let color of product.colors; let i = index'[ngClass]="'bg-' + color">
+             </span>
+          </td>
+        </tr>
+        <tr class="condition">
+          <th scope="row" class="text-left">Condition</th>
+          <td *ngFor='let product of products' [ngClass]="product.condition === 'Frozen' ? 'bg-red' : 'bg-green'">
+             {{product.condition}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

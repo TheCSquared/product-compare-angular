@@ -1,0 +1,17 @@
+<div key={product.id}>
+  <div [ngClass]="product.compare ? 'product compare' : 'product'" >
+      <img [src]="product.image" [alt]="product.name" />
+      <div class="image_overlay">
+      </div>
+      <div class="view_details" (click)='toggleCompare()'>
+        {{product.compare ? "Remove" : "Compare"}}
+      </div>
+      <div class="stats">
+          <div class="stats-container">
+              <span class="product_price">{{product.price}}</span>
+              <span class="product_name">{{product.name}}</span>
+              <p>{{product.description}}</p>
+          </div>
+      </div>
+  </div>
+</div>

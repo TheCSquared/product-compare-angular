@@ -1,0 +1,17 @@
+<div class="app">
+  <div class="container mt-4">
+    <div class="home mt-5">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="mb-3">Compare Products</h2>
+        </div>
+      </div>
+      <div class="row mt-3">
+          <app-product *ngFor='let prod of products' [product]=prod class="col-sm-6 col-md-3" >
+          </app-product>
+      </div>
+      <app-compare *ngIf='compareProdList().length >= 2' [products]=compareProdList()>
+      </app-compare>
+    </div>
+  </div>
+</div>
